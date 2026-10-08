@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Order Success — Monechai.com</title>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="icon" type="image/svg+xml" href="assets/monechai-mark.svg"></head>
+<body>
+<header class="header"><div class="container header-main">
+<a href="index.html" class="logo"><img src="assets/monechai-logo.svg" alt="Monechai" class="logo-wordmark"></a>
+<div class="header-icons"><div class="lang-switch"><button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button><button class="lang-btn" data-lang="bn" onclick="setLang('bn')">বাং</button></div></div>
+</div></header>
+<div class="container">
+<div class="success-wrap">
+<div class="checkmark">✓</div>
+<h2 data-i18n="success_t">Thank You! Order Successful 🎉</h2>
+<p style="color:var(--text-secondary)" data-i18n="success_s">Our team will call you soon to confirm.</p>
+<div id="ordInfo" style="background:var(--background-soft);border:1.5px dashed var(--brand-gold-soft);border-radius:12px;padding:14px;margin:16px 0;text-align:left;font-size:14px"></div>
+<p>📞 Need help? WhatsApp: <a href="https://wa.me/8801618108591" style="font-weight:900;color:var(--green)">01618-108591</a></p>
+<a href="shop.html" class="btn btn-gold btn-big" data-i18n="cont_shop">← Continue Shopping</a>
+<a href="index.html" class="btn btn-outline btn-big" style="margin-top:10px;color:var(--text-primary);border-color:var(--border)" data-i18n="bn_home">Home</a>
+</div>
+</div>
+<script src="assets/js/lang.js"></script>
+<script>
+const orderKey='monechai_last';
+const legacyOrderKey=['mone','chi'].join('')+'_last';
+const oldOrder=localStorage.getItem(orderKey)||localStorage.getItem(legacyOrderKey);
+if(oldOrder&&!localStorage.getItem(orderKey)) localStorage.setItem(orderKey,oldOrder);
+const o=JSON.parse(oldOrder||'null');
+if(o){ document.getElementById('ordInfo').innerHTML=`<b>Order ID:</b> ${o.id}<br><b>Name:</b> ${o.name}<br><b>Phone:</b> ${o.phone}<br><b>Address:</b> ${o.addr}<br><b>Total (COD):</b> <span style="color:var(--focus);font-weight:900">৳${o.total.toLocaleString()}</span><br><small>Payment: Cash on Delivery 💵</small>`; }
+applyLang();
+</script>
+</body>
+</html>

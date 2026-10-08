@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Monechai.com — Shop Smart • Live Better | Premium Online Shopping in Bangladesh</title>
+<meta name="description" content="Monechai.com - Premium trusted online shop in Bangladesh. RC cars, drones, gaming, watches, home lighting. Cash on Delivery, Fast Delivery. WhatsApp 01618108591">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Marcellus&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="icon" type="image/svg+xml" href="assets/monechai-mark.svg">
+</head>
+<body>
+
+<div class="topbar" data-i18n="topbar">🚚 <b>CASH ON DELIVERY</b> all over Bangladesh <span>•</span> Free Delivery over ৳2000 <span>•</span> 📞 Hotline: 01618-108591</div>
+
+<header class="header">
+  <div class="container header-main">
+    <a href="index.html" class="logo">
+      <img src="assets/monechai-logo.svg" alt="Monechai" class="logo-wordmark">
+    </a>
+    <div class="searchbar">
+      <input id="searchInput" type="text" data-i18n-ph="search_ph" placeholder="Search products… RC car, drone, watch, lamp… 🔍">
+      <button onclick="location.href='shop.html'">⌕</button>
+    </div>
+    <div class="header-icons">
+      <div class="lang-switch"><button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button><button class="lang-btn" data-lang="bn" onclick="setLang('bn')">বাং</button></div>
+      <a class="hicon" href="shop.html">❤️ <span class="txt" data-i18n="wish">Wishlist</span> <span class="count" id="wishCount">0</span></a>
+      <button class="hicon gold" onclick="openCart()">🛒 <span class="txt" data-i18n="cart">Cart</span> <span class="count" id="cartCount">0</span></button>
+    </div>
+  </div>
+  <div class="container nav-row">
+    <a class="nav-pill active" href="index.html" data-i18n="nav_home">🏠 Home</a>
+    <a class="nav-pill" href="shop.html" data-i18n="nav_shop">🛍️ Shop</a>
+    <a class="nav-pill" href="shop.html?cat=New%20Arrival" data-i18n="nav_new">✨ New Arrival</a>
+    <a class="nav-pill" href="shop.html?cat=Gaming" data-i18n="nav_gaming">🎮 Gaming</a>
+    <a class="nav-pill" href="shop.html?cat=Drones" data-i18n="nav_drones">🚁 Drones</a>
+    <a class="nav-pill" href="shop.html?cat=Watches" data-i18n="nav_watches">⌚ Watches</a>
+    <a class="nav-pill" href="shop.html?cat=Combo%20Gifts" data-i18n="nav_offers">🎁 Offers</a>
+    <a class="nav-pill" href="#how" data-i18n="nav_how">❓ How to Order</a>
+    <a class="nav-pill" href="#contact" data-i18n="nav_contact">📞 Contact</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <span class="badge-premium" data-i18n="hero_badge">⭐ PREMIUM TRUSTED SHOP IN BANGLADESH</span>
+      <h1><span data-i18n="hero_t1">Shop Smart,</span><br><span class="gold-shine" data-i18n="hero_t2">Live Better.</span></h1>
+      <p class="sub" data-i18n="hero_sub">Unique gadgets, toys, gaming & home décor — quality checked, fast delivery, cash on delivery. Trusted by thousands nationwide.</p>
+      <div class="hero-cta">
+        <a href="shop.html" class="btn btn-gold" data-i18n="hero_shop">🛍️ Shop Now</a>
+        <a href="shop.html?cat=Combo%20Gifts" class="btn btn-outline" data-i18n="hero_offer">🎁 Today's Offers</a>
+      </div>
+      <div class="trust-row">
+        <div class="trust"><i>🚚</i><div><span data-i18n="trust1">🚚 Fast Delivery</span><br><small data-i18n="trust1s">24h in Dhaka</small></div></div>
+        <div class="trust"><i>💵</i><div><span data-i18n="trust2">💵 Cash on Delivery</span><br><small data-i18n="trust2s">Pay on receive</small></div></div>
+        <div class="trust"><i>🏆</i><div><span data-i18n="trust3">🏆 5000+ Happy Customers</span><br><small data-i18n="trust3s">Review 4.8★</small></div></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card-main">
+        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80" alt="Monechai premium collection">
+        <div class="hero-card-info">
+          <div><small style="color:var(--focus);font-weight:800" data-i18n="sale_tag">MEGA SALE • UP TO 30% OFF</small><br><strong data-i18n="sale_title">New Collection 2026</strong></div>
+          <a href="shop.html" class="btn btn-gold" style="padding:10px 20px;font-size:14px">Buy →</a>
+        </div>
+      </div>
+      <div class="float-card float-1">✅ 100% Quality Checked</div>
+      <div class="float-card float-2">💵 COD Available</div>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="howto" id="how">
+    <h3 data-i18n="how_title">How to Order? <span>— Super Easy!</span></h3>
+    <div class="howto-grid">
+      <div class="step"><div class="step-num">1</div><strong data-i18n="s1t">Choose Product</strong><small data-i18n="s1s">Pick your favourite</small></div>
+      <div class="step"><div class="step-num">2</div><strong data-i18n="s2t">Click Order Now</strong><small data-i18n="s2s">Press Order button</small></div>
+      <div class="step"><div class="step-num">3</div><strong data-i18n="s3t">Give Address</strong><small data-i18n="s3s">Name-Mobile-Address</small></div>
+      <div class="step"><div class="step-num">4</div><strong data-i18n="s4t">Cash on Delivery</strong><small data-i18n="s4s">Pay on receive 💵</small></div>
+    </div>
+  </div>
+</div>
+
+<!-- CATEGORIES -->
+<section class="section container">
+  <div class="sec-head"><div><h2 data-i18n="cat_t">Shop by Category</h2><p data-i18n="cat_s">Everything in one place</p></div><a class="link-more" href="shop.html" data-i18n="see_all">See All →</a></div>
+  <div class="cat-grid" id="catGrid"></div>
+</section>
+
+<!-- FLASH -->
+<section class="section container">
+  <div class="flash">
+    <div class="flash-top">
+      <div class="flash-title" data-i18n="flash_t">⚡ Flash Sale!</div>
+      <div style="font-size:14px;color:var(--brand-gold-soft)" data-i18n="flash_s">Hurry! Offer ends tonight</div>
+      <div class="timer"><div class="tbox"><b id="cd-h">05</b><small>HRS</small></div><div class="tbox"><b id="cd-m">20</b><small>MIN</small></div><div class="tbox"><b id="cd-s">10</b><small>SEC</small></div></div>
+    </div>
+    <div class="pgrid" id="flashGrid" style="grid-template-columns:repeat(5,1fr)"></div>
+  </div>
+</section>
+
+<!-- BANNERS -->
+<section class="section container">
+  <div class="banner-grid">
+    <div class="banner b1"><div><h3 data-i18n="bunk1_t">🎮 Gaming Fest</h3><p data-i18n="bunk1_s">Keyboard, mouse, triggers up to 25% off</p><a href="shop.html?cat=Gaming" class="btn btn-gold" data-i18n="bunk1_b">Shop Gaming</a></div></div>
+    <div class="banner b2"><div><h3 data-i18n="bunk2_t">🏠 Home & Light</h3><p data-i18n="bunk2_s">Aesthetic lamps & decor</p><a href="shop.html?cat=Home%20%26%20Lighting" class="btn btn-gold" data-i18n="bunk2_b">Shop Home</a></div></div>
+    <div class="banner b3"><div><h3 data-i18n="bunk3_t">🎧 Audio Lovers</h3><p data-i18n="bunk3_s">Headset & speakers deep bass</p><a href="shop.html?cat=Audio" class="btn btn-gold" data-i18n="bunk3_b">Shop Audio</a></div></div>
+  </div>
+</section>
+
+<!-- ALL PRODUCTS -->
+<section class="section container">
+  <div class="sec-head"><div><h2 data-i18n="all_t">All Products</h2><p data-i18n="all_s">See price, discount & reviews</p></div><a class="link-more" href="shop.html" data-i18n="see_all">See All →</a></div>
+  <div class="pgrid" id="allGrid"></div>
+</section>
+
+<!-- WHY -->
+<section class="section container">
+  <div class="sec-head"><div><h2 data-i18n="why_t">Why Monechai?</h2><p data-i18n="why_s">Why thousands buy from us</p></div></div>
+  <div class="why-grid">
+    <div class="why"><div class="ic">💎</div><strong data-i18n="w1t">Premium Quality</strong><p data-i18n="w1d">Every product quality-checked before dispatch.</p></div>
+    <div class="why"><div class="ic">🚚</div><strong data-i18n="w2t">Fast Delivery</strong><p data-i18n="w2d">Dhaka 24h, outside 48-72h all over BD.</p></div>
+    <div class="why"><div class="ic">💵</div><strong data-i18n="w3t">Cash on Delivery</strong><p data-i18n="w3d">Pay when you receive. No advance needed.</p></div>
+    <div class="why"><div class="ic">↩️</div><strong data-i18n="w4t">Easy Exchange</strong><p data-i18n="w4d">Damaged? 7-day easy exchange support.</p></div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="section container">
+  <div class="sec-head"><div><h2 data-i18n="rev_t">Customer Reviews</h2><p data-i18n="rev_s">⭐ 4.8/5 from 5000+ buyers</p></div></div>
+  <div class="rev-grid">
+    <div class="rev">⭐⭐⭐⭐⭐<p>"RC car ta oshadharon! Delivery pelo 2 dine. Packing premium chilo. Monechai best!"</p><div class="who"><div class="avatar">R</div><div><b>Rahim Uddin</b><br><small>Dhaka • Verified Buyer ✅</small></div></div></div>
+    <div class="rev">⭐⭐⭐⭐⭐<p>"Amar meyar jonno lamp nilam. Quality khub valo, dam o kom. Cash on delivery tai tension nai."</p><div class="who"><div class="avatar">S</div><div><b>Sharmin Akter</b><br><small>Chattogram • Verified Buyer ✅</small></div></div></div>
+    <div class="rev">⭐⭐⭐⭐⭐<p>"Gaming combo at this price is insane. Original product, fast support on WhatsApp 01618-108591. Highly recommended."</p><div class="who"><div class="avatar">T</div><div><b>Tanvir Hasan</b><br><small>Sylhet • Verified Buyer ✅</small></div></div></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer" id="contact">
+  <div class="container foot-grid">
+    <div>
+      <div class="foot-logo">
+        <div><img src="assets/monechai-logo-light.svg" alt="Monechai" class="foot-wordmark"><small>SHOP SMART • LIVE BETTER</small></div>
+      </div>
+      <p style="font-size:13.5px" data-i18n="foot_desc">Your trusted hub for unique gadgets & home décor. Quality, reliability & happiness to your doorstep.</p>
+      <div class="socials"><a href="https://wa.me/8801618108591" target="_blank" title="WhatsApp">💬</a><a href="#" title="Facebook">f</a><a href="#" title="YouTube">▶</a><a href="#" title="TikTok">🎵</a></div>
+    </div>
+    <div><h4 data-i18n="foot_quick">QUICK LINKS</h4><a href="shop.html" data-i18n="l_shop">Shop</a><a href="shop.html?cat=Combo%20Gifts" data-i18n="l_offers">Offers</a><a href="shop.html" data-i18n="l_top">Top Sales</a><a href="shop.html" data-i18n="l_all">All Products</a></div>
+    <div><h4 data-i18n="foot_about">ABOUT</h4><a href="#" data-i18n="l_about">About Us</a><a href="#" data-i18n="l_contact">Contact Us</a><a href="#" data-i18n="l_priv">Privacy Policy</a><a href="#" data-i18n="l_terms">Terms & Conditions</a></div>
+    <div><h4 data-i18n="foot_contact">CONTACT US</h4><p style="font-size:14px">📍 Dhaka, Bangladesh<br>📞 <a href="tel:01618108591" style="display:inline;color:var(--brand-gold-soft);font-weight:800">01618-108591</a> (WhatsApp)<br>✉️ support@monechai.com<br>🌐 www.monechai.com</p></div>
+  </div>
+  <div class="copy">© 2026 Monechai.com — ALL RIGHTS RESERVED. • Made with 💛 in Bangladesh • WhatsApp: 01618-108591</div>
+</footer>
+
+<!-- CART DRAWER -->
+<div class="overlay" id="overlay"></div>
+<aside class="drawer" id="drawer">
+  <div class="drawer-head"><strong data-i18n="mycart">🛒 My Cart</strong><button class="close-btn" onclick="closeCart()">✕</button></div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="drawer-foot">
+    <div id="freeBar" class="free-ship">🚚 Cash on Delivery all over Bangladesh</div>
+    <div class="total-row"><span data-i18n="subtotal">Subtotal:</span><b id="subTotal">৳0</b></div>
+    <div class="total-row"><span data-i18n="delivery">Delivery:</span><b id="shipCost">৳0</b></div>
+    <div class="total-row grand"><span data-i18n="total">Total:</span><span id="grandTotal" style="color:var(--focus)">৳0</span></div>
+    <button class="btn btn-gold btn-big" style="margin-top:10px" onclick="location.href='checkout.html'" data-i18n="checkout">✅ Checkout</button>
+    <button class="btn btn-outline btn-big" style="margin-top:8px;color:var(--text-primary);border-color:var(--border)" onclick="waOrder()" data-i18n="wa_order">💬 Order on WhatsApp</button>
+  </div>
+</aside>
+
+<!-- QUICK VIEW MODAL -->
+<div class="modal" id="qvModal">
+  <div class="modal-box">
+    <div style="position:relative"><img id="qvImg" src="" alt=""><button onclick="closeQV()" style="position:absolute;top:10px;right:10px;background:var(--text-primary);color:var(--surface);border:0;border-radius:50%;width:36px;height:36px;font-size:18px">✕</button></div>
+    <div class="modal-info">
+      <h2 id="qvName"></h2>
+      <div id="qvMeta" style="font-size:13px;color:var(--text-secondary);margin:6px 0"></div>
+      <div class="price-big" id="qvPrice" style="color:var(--focus)"></div>
+      <p id="qvDesc" style="font-size:14px;color:var(--text-secondary)"></p>
+      <div class="cod-box">💵 <b>Cash on Delivery</b> available! পণ্য হাতে পেয়ে টাকা দিন।<br>🚚 Inside Dhaka ৳60 • Outside ৳120 • Free over ৳2000<br>📞 WhatsApp: 01618-108591</div>
+      <div style="display:flex;gap:8px;margin-bottom:10px"><label class="lbl" style="align-self:center" data-i18n="qty">Qty:</label><input id="qvQty" type="number" value="1" min="1" max="10" style="width:70px;padding:10px;border:1.5px solid var(--border);border-radius:10px"></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+        <button class="btn btn-black" id="qvAdd">🛒 Add to Cart</button>
+        <button class="btn btn-gold" id="qvBuy">⚡ Order Now</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<a class="wa-float" href="https://wa.me/8801618108591?text=Assalamu%20Alaikum%20Monechai!%20I%20want%20to%20order." target="_blank" title="WhatsApp 01618108591">💬</a>
+
+<nav class="bottomnav"><div class="bn-grid">
+  <a href="index.html" class="active"><span class="ic">🏠</span><span data-i18n="bn_home">Home</span></a>
+  <a href="shop.html"><span class="ic">🛍️</span><span data-i18n="bn_shop">Shop</span></a>
+  <a href="shop.html?cat=Combo%20Gifts"><span class="ic">🎁</span><span data-i18n="bn_offers">Offers</span></a>
+  <a href="#" onclick="openCart();return false"><span class="ic">🛒</span><span data-i18n="cart">Cart</span><span class="bn-count" id="cartCountM">0</span></a>
+  <a href="checkout.html"><span class="ic">👤</span><span data-i18n="bn_order">Order</span></a>
+</div></nav>
+
+<script src="assets/js/products.js"></script>
+<script src="assets/js/lang.js"></script>
+<script src="assets/js/app.js"></script>
+<script>
+renderGrid('flashGrid', PRODUCTS.slice(0,5));
+renderGrid('allGrid', PRODUCTS.slice(0,15));
+document.getElementById('searchInput').addEventListener('keydown',e=>{ if(e.key==='Enter') location.href='shop.html?q='+encodeURIComponent(e.target.value); });
+applyLang();
+</script>
+</body>
+</html>

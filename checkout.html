@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkout — Cash on Delivery | Monechai.com</title>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Marcellus&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="icon" type="image/svg+xml" href="assets/monechai-mark.svg">
+</head>
+<body>
+<div class="topbar">✅ <b>100% SAFE</b> — পণ্য হাতে পেয়ে টাকা দিন (Cash on Delivery) • 📞 01618-108591</div>
+<header class="header"><div class="container header-main">
+<a href="index.html" class="logo">
+<img src="assets/monechai-logo.svg" alt="Monechai" class="logo-wordmark"></a>
+<div class="header-icons">
+<div class="lang-switch"><button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button><button class="lang-btn" data-lang="bn" onclick="setLang('bn')">বাং</button></div>
+<a class="hicon" href="index.html">🏠 <span class="txt" data-i18n="bn_home">Home</span></a><a class="hicon" href="shop.html">🛍️ <span class="txt" data-i18n="bn_shop">Shop</span></a></div>
+</div></header>
+
+<div class="container">
+<h1 style="font-family:var(--display);margin:18px 0 4px;font-size:28px" data-i18n="co_title">✅ Checkout</h1>
+<p style="color:var(--text-secondary);font-size:14px" data-i18n="co_sub">Order in 30 seconds! Fill form, pay on receive.</p>
+
+<div class="check-grid">
+<div class="cardbox">
+<h3 data-i18n="d_info">📝 Delivery Information</h3>
+<p style="font-size:13px;color:var(--text-secondary);margin-bottom:12px" data-i18n="d_info_s">Give correct name, mobile & address. Our team will call to confirm.</p>
+<form class="order-form" onsubmit="return submitOrder(event)">
+<label class="lbl"><span data-i18n="f_name">Your Name</span> *</label>
+<input id="oName" placeholder="e.g. Md Rahim / মোঃ রহিম" required>
+<label class="lbl"><span data-i18n="f_phone">Mobile Number</span> *</label>
+<input id="oPhone" placeholder="01XXXXXXXXX (11 digit)" maxlength="11" inputmode="numeric" required>
+<label class="lbl"><span data-i18n="f_addr">Full Address</span> *</label>
+<textarea id="oAddr" rows="3" placeholder="House, Road, Area, Thana, District… / বাসা, রোড, এলাকা, থানা, জেলা…" required></textarea>
+<label class="lbl"><span data-i18n="f_area">Delivery Area</span> *</label>
+<select id="dArea" onchange="renderCart()"><option value="inside" data-i18n="a_in">Inside Dhaka — (৳60 / Free over ৳2000)</option><option value="outside" data-i18n="a_out">Outside Dhaka — (৳120)</option></select>
+<label class="lbl"><span data-i18n="f_pay">Payment Method</span> *</label>
+<div class="pay-opt">
+<div class="pay active" data-pay="Cash on Delivery" onclick="paySelect(this)">💵<br>COD<br><small>ক্যাশ অন ডেলিভারি</small></div>
+<div class="pay" data-pay="bKash" onclick="paySelect(this)">📱<br>bKash<br><small>বিকাশ</small></div>
+<div class="pay" data-pay="Nagad" onclick="paySelect(this)">💳<br>Nagad<br><small>নগদ</small></div>
+</div>
+<label class="lbl"><span data-i18n="f_note">Note (optional)</span></label>
+<input id="oNote" placeholder="e.g. Call before delivery…">
+<button class="btn btn-gold btn-big" type="submit" data-i18n="confirm">🚀 Confirm Order</button>
+<p style="text-align:center;font-size:13px;color:var(--text-secondary);margin-top:8px" data-i18n="secure">🔒 No advance needed • 📞 Confirmation call • ↩️ Easy exchange</p>
+</form>
+</div>
+
+<div class="cardbox" style="height:fit-content;position:sticky;top:130px">
+<h3 data-i18n="summary">🧾 Order Summary</h3>
+<div id="coItems" style="margin:12px 0"></div>
+<hr style="border:0;border-top:1px dashed var(--border);margin:10px 0">
+<div class="total-row"><span data-i18n="subtotal">Subtotal:</span><b id="coSub">৳0</b></div>
+<div class="total-row"><span data-i18n="delivery">Delivery:</span><b id="coShip">৳0</b></div>
+<div class="total-row grand"><span data-i18n="total">Total:</span><span id="coGrand" style="color:var(--focus)">৳0</span></div>
+<button class="btn btn-black btn-big" style="margin-top:12px" onclick="waOrder()" data-i18n="wa_order">💬 Order via WhatsApp</button>
+<a href="shop.html" style="display:block;text-align:center;margin-top:10px;font-weight:700;color:var(--focus)" data-i18n="cont_shop">← Continue Shopping</a>
+<div class="cod-box" style="margin-top:12px" data-i18n="promise">💎 Premium promise: Quality checked • Fast delivery • Pay on receive.</div>
+<div class="cod-box" style="margin-top:8px">📞 Helpline / WhatsApp: <a href="https://wa.me/8801618108591" style="font-weight:900;color:var(--green)">01618-108591</a></div>
+</div>
+</div>
+</div>
+
+<footer class="footer"><div class="copy">© 2026 Monechai.com — SHOP SMART • LIVE BETTER 💛 • Hotline / WhatsApp 01618-108591</div></footer>
+
+<script src="assets/js/products.js"></script>
+<script src="assets/js/lang.js"></script>
+<script src="assets/js/app.js"></script>
+<script>applyLang();</script>
+</body>
+</html>

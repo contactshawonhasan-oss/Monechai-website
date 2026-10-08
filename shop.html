@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shop All Products — Monechai.com</title>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Marcellus&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="icon" type="image/svg+xml" href="assets/monechai-mark.svg">
+</head>
+<body>
+<div class="topbar" data-i18n="topbar">🚚 <b>CASH ON DELIVERY</b> all over Bangladesh <span>•</span> Free Delivery over ৳2000 <span>•</span> 📞 Hotline: 01618-108591</div>
+<header class="header">
+  <div class="container header-main">
+    <a href="index.html" class="logo">
+      <img src="assets/monechai-logo.svg" alt="Monechai" class="logo-wordmark">
+    </a>
+    <div class="searchbar"><input id="shopSearch" type="text" data-i18n-ph="search_ph" placeholder="Search…"><button>⌕</button></div>
+    <div class="header-icons">
+      <div class="lang-switch"><button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button><button class="lang-btn" data-lang="bn" onclick="setLang('bn')">বাং</button></div>
+      <a class="hicon" href="index.html">🏠 <span class="txt" data-i18n="bn_home">Home</span></a>
+      <button class="hicon gold" onclick="openCart()">🛒 <span class="txt" data-i18n="cart">Cart</span> <span class="count" id="cartCount">0</span></button>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <div style="margin:16px 0 4px;font-size:13px;color:var(--text-secondary)"><a href="index.html" data-i18n="bn_home">Home</a> / <b data-i18n="bn_shop">Shop</b></div>
+  <h1 style="font-family:var(--display);font-size:30px"><span data-i18n="shop_title">🛍️ All Products</span> <span style="font-size:15px;color:var(--text-secondary);font-family:var(--font)" data-i18n="shop_sub">— everything together</span></h1>
+
+  <div class="toolbar">
+    <input id="q" data-i18n-ph="search2_ph" placeholder="🔍 Search product…" style="flex:1;min-width:180px">
+    <select id="sort"><option value="" data-i18n="sort_pop">Sort: Popular</option><option value="low" data-i18n="sort_low">Price: Low → High</option><option value="high" data-i18n="sort_high">Price: High → Low</option><option value="sold" data-i18n="sort_sold">Most Sold</option></select>
+    <select id="dCat"><option value="All">All Categories</option></select>
+  </div>
+  <div class="chips" id="chips" style="margin-bottom:12px"></div>
+  <div class="pgrid" id="shopGrid"></div>
+  <div style="height:30px"></div>
+</div>
+
+<footer class="footer"><div class="copy">© 2026 Monechai.com — SHOP SMART • LIVE BETTER 💛 • WhatsApp: 01618-108591</div></footer>
+
+<div class="overlay" id="overlay"></div>
+<aside class="drawer" id="drawer">
+  <div class="drawer-head"><strong data-i18n="mycart">🛒 My Cart</strong><button class="close-btn" onclick="closeCart()">✕</button></div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="drawer-foot">
+    <div id="freeBar" class="free-ship"></div>
+    <div class="total-row"><span data-i18n="subtotal">Subtotal:</span><b id="subTotal">৳0</b></div>
+    <div class="total-row"><span data-i18n="delivery">Delivery:</span><b id="shipCost">৳0</b></div>
+    <div class="total-row grand"><span data-i18n="total">Total:</span><span id="grandTotal" style="color:var(--focus)">৳0</span></div>
+    <button class="btn btn-gold btn-big" style="margin-top:10px" onclick="location.href='checkout.html'" data-i18n="checkout">✅ Checkout</button>
+    <button class="btn btn-black btn-big" style="margin-top:8px" onclick="waOrder()" data-i18n="wa_order">💬 Order on WhatsApp</button>
+  </div>
+</aside>
+
+<div class="modal" id="qvModal"><div class="modal-box">
+<div style="position:relative"><img id="qvImg" src=""><button onclick="closeQV()" style="position:absolute;top:10px;right:10px;background:var(--text-primary);color:var(--surface);border:0;border-radius:50%;width:36px;height:36px">✕</button></div>
+<div class="modal-info"><h2 id="qvName"></h2><div id="qvMeta" style="font-size:13px;color:var(--text-secondary);margin:6px 0"></div><div class="price-big" id="qvPrice" style="color:var(--focus)"></div><p id="qvDesc" style="font-size:14px;color:var(--text-secondary)"></p>
+<div class="cod-box">💵 <b>Cash on Delivery</b> — পণ্য হাতে পেয়ে টাকা দিন।<br>📞 WhatsApp: 01618-108591</div>
+<div style="display:flex;gap:8px;margin-bottom:10px"><input id="qvQty" type="number" value="1" min="1" style="width:70px;padding:10px;border:1.5px solid var(--border);border-radius:10px"></div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px"><button class="btn btn-black" id="qvAdd">🛒 Add</button><button class="btn btn-gold" id="qvBuy">⚡ Order</button></div></div>
+</div></div>
+
+<a class="wa-float" href="https://wa.me/8801618108591" target="_blank">💬</a>
+
+<nav class="bottomnav"><div class="bn-grid">
+<a href="index.html"><span class="ic">🏠</span><span data-i18n="bn_home">Home</span></a><a href="shop.html" class="active"><span class="ic">🛍️</span><span data-i18n="bn_shop">Shop</span></a><a href="shop.html?cat=Combo%20Gifts"><span class="ic">🎁</span><span data-i18n="bn_offers">Offers</span></a><a href="#" onclick="openCart();return false"><span class="ic">🛒</span><span data-i18n="cart">Cart</span><span class="bn-count" id="cartCountM">0</span></a><a href="checkout.html"><span class="ic">👤</span><span data-i18n="bn_order">Order</span></a>
+</div></nav>
+
+<script src="assets/js/products.js"></script>
+<script src="assets/js/lang.js"></script>
+<script src="assets/js/app.js"></script>
+<script>
+const params=new URLSearchParams(location.search);
+let curCat=params.get('cat')||'All';
+let curQ=params.get('q')||'';
+const cats=['All',...new Set(PRODUCTS.map(p=>p.category))];
+document.getElementById('dCat').innerHTML=cats.map(c=>`<option ${c===curCat?'selected':''}>${c}</option>`).join('');
+document.getElementById('chips').innerHTML=cats.map(c=>`<button class="chip ${c===curCat?'active':''}" data-c="${c}">${c}</button>`).join('');
+document.querySelectorAll('.chip').forEach(ch=>ch.onclick=()=>{curCat=ch.dataset.c;document.getElementById('dCat').value=curCat;paint();document.querySelectorAll('.chip').forEach(x=>x.classList.toggle('active',x===ch));});
+document.getElementById('q').value=curQ;
+document.getElementById('shopSearch').value=curQ;
+function paint(){
+  let list=[...PRODUCTS];
+  if(curCat!=='All') list=list.filter(p=>p.category===curCat);
+  const q=(document.getElementById('q').value||'').toLowerCase();
+  if(q) list=list.filter(p=>p.name.toLowerCase().includes(q)||p.category.toLowerCase().includes(q));
+  const s=document.getElementById('sort').value;
+  if(s==='low') list.sort((a,b)=>a.price-b.price);
+  if(s==='high') list.sort((a,b)=>b.price-a.price);
+  if(s==='sold') list.sort((a,b)=>b.sold-a.sold);
+  renderGrid('shopGrid',list);
+}
+['q','sort'].forEach(id=>document.getElementById(id).addEventListener('input',paint));
+document.getElementById('dCat').addEventListener('change',e=>{curCat=e.target.value;paint();});
+document.getElementById('shopSearch').addEventListener('input',e=>{document.getElementById('q').value=e.target.value;paint();});
+paint(); applyLang();
+</script>
+</body>
+</html>
